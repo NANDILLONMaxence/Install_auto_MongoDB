@@ -10,7 +10,7 @@ curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
    --dearmor
 
 # Step 2: Create MongoDB sources list file for Debian 11 "Bullseye"
-echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] http://repo.mongodb.org/apt/debian bullseye/mongodb-org/7.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] http://repo.mongodb.org/apt/debian `lsb_release -cs`/mongodb-org/7.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 
 # Step 3: Reload local package database
 sudo apt-get update
