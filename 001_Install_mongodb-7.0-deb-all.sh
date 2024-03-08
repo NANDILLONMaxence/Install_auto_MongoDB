@@ -29,17 +29,17 @@ echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 # Step 5: Start MongoDB
 sudo systemctl start mongod
 
-# Step 6: Verify MongoDB status
+# Step 6: Run the following command first:
+sudo systemctl daemon-reload
+
+# Step 7: Verify MongoDB status
 sudo systemctl status mongod
 
 # Optional: Enable MongoDB to start on system reboot
 sudo systemctl enable mongod
 
-# Step 7: Reload local package database
-sudo apt-get update
-
-# Step 8: Stop MongoDB (if needed)
-# sudo systemctl stop mongod
+# Step 8: Reload local package database
+sudo apt update
 
 # Step 9: Restart MongoDB (if needed)
 # sudo systemctl restart mongod
